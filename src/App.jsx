@@ -61,15 +61,17 @@ function Content() {
 
 function Coments() {
   return (
-    <div className='rounded coment border grow'></div>
+    <div className='rounded coment border grow'>hola, deja tu comentario aca</div>
   )
 }
 
 function App() {
   return <div className='container-screen'>
     <Sidebar />
-    <Content />
-    <Coments/>
+    <div className="content-and-comments">
+      <Content />
+      <Coments />
+    </div>
   </div>
 }
 
