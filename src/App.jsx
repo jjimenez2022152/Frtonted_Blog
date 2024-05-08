@@ -1,8 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Outlet } from "react-router-dom"
 import './App.css'
 import { IconBrandGithub, IconBrandInstagram } from '@tabler/icons-react'
+import { Link } from "react-router-dom"
 
 function Sidebar() {
   return (
@@ -12,7 +11,13 @@ function Sidebar() {
           <div className="center">
             <img className='rounded-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/458px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg" alt="Alejandro Jimenez" />
           </div>
-          <a href="" className="link-sidebar">Home</a><a href="" className="link-sidebar">Mis proyectos.</a><a href="" className="link-sidebar">Autem, illum!</a><a href="" className="link-sidebar">Perferendis, repellat.</a><a href="" className="link-sidebar">Sint, odit!</a><a href="" className="link-sidebar">Debitis, obcaecati!</a><a href="" className="link-sidebar">Sint, voluptate.</a>
+          <a href="" className="link-sidebar">Home</a>
+          <Link to="/my-projects" className="link-sidebar">Mis proyectos.</Link>
+          <a href="" className="link-sidebar">Autem, illum!</a>
+          <a href="" className="link-sidebar">Perferendis, repellat.</a>
+          <a href="" className="link-sidebar">Sint, odit!</a>
+          <a href="" className="link-sidebar">Debitis, obcaecati!</a>
+          <a href="" className="link-sidebar">Sint, voluptate.</a>
         </div>
         <div className="horizontal gap-5">
           <IconBrandGithub className='cursor-pointer' />
@@ -23,7 +28,7 @@ function Sidebar() {
   )
 }
 
-function Content() {
+export function Content() {
   return (
     <div className='rounded content border grow'>
       <div className="p-5">
@@ -45,6 +50,7 @@ function Content() {
           ¡No dudes en seguirme en mis redes sociales para estar al tanto de las últimas actualizaciones y conversar sobre tecnología!
         </p>
         <div className="mt-5 flex gap-3">
+          
           <a href="#" className="text-blue-500 hover:underline">Twitter</a>
           <br />
           <a href="#" className="text-blue-500 hover:underline">LinkedIn</a>
@@ -69,8 +75,8 @@ function App() {
   return <div className='container-screen'>
     <Sidebar />
     <div className="content-and-comments">
-      <Content />
-      <Coments />
+      <Outlet />
+      {/* <Coments /> */}
     </div>
   </div>
 }
