@@ -100,3 +100,37 @@ html, body {
     max-width: 100%;
   }
 }
+
+/* content.css */
+.content {
+  background-color: #f3f4f6; /* Cambia el color de fondo según tus preferencias */
+  padding: 20px;
+}
+
+.content h2 {
+  color: #333;
+}
+
+.content h3 {
+  color: #555;
+}
+
+.content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.content a {
+  color: #1e90ff; /* Cambia el color de los enlaces según tus preferencias */
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.content .social-links a {
+  margin-right: 10px; /* Espaciado entre los enlaces de las redes sociales */
+}
+
