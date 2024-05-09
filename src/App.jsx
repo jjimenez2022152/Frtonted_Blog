@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom"
 import './App.css'
 import { IconBrandGithub, IconBrandInstagram } from '@tabler/icons-react'
 import { Link } from "react-router-dom"
+import {Yo} from '../src/components/Yo.jsx'
+
 
 function Sidebar() {
   return (
@@ -9,9 +11,10 @@ function Sidebar() {
       <div className="vertical py-5 gap-5 px-3">
         <div className="vertical">
           <div className="center">
-            <img className='rounded-full' src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/458px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg" alt="Alejandro Jimenez" />
+
+          <Yo className='rounded-full'/>
           </div>
-          <a href="" className="link-sidebar">Home</a>
+          <Link to="/" className="link-sidebar">Home</Link>
           <Link to="/my-projects" className="link-sidebar">Mis proyectos.</Link>
           <a href="" className="link-sidebar">Autem, illum!</a>
           <a href="" className="link-sidebar">Perferendis, repellat.</a>
@@ -51,11 +54,11 @@ export function Content() {
         </p>
         <div className="mt-5 flex gap-3">
           
-          <a href="#" className="text-blue-500 hover:underline">Twitter</a>
+          <a href="https://www.instagram.com/jose_jc.java?igsh=YXo3dDN0b3Rya2Jq" className="text-blue-500 hover:underline">Instagram</a>
           <br />
-          <a href="#" className="text-blue-500 hover:underline">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/josebraulioe/" className="text-blue-500 hover:underline">LinkedIn</a>
           <br />
-          <a href="#" className="text-blue-500 hover:underline">GitHub</a>
+          <a href="https://github.com/jjimenez2022152" className="text-blue-500 hover:underline">GitHub</a>
           <br />
         </div>
       </div>

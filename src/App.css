@@ -134,3 +134,34 @@ html, body {
   margin-right: 10px; /* Espaciado entre los enlaces de las redes sociales */
 }
 
+.publications-all {
+  background-color: #f3f4f6; /* Cambia el color de fondo según tus preferencias */
+  padding: 20px;
+  margin-bottom: 20px; /* Añade margen inferior para separar las publicaciones */
+}
+
+.publications-all div {
+  margin-bottom: 15px; /* Espaciado entre cada sección */
+}
+
+.publications-all div:nth-child(1) {
+  color: #333; /* Color para el título */
+}
+
+.publications-all div:nth-child(2) {
+  color: #666; /* Color para el texto */
+  line-height: 1.6;
+}
+
+.publications-all div:nth-child(3) {
+  color: #555; /* Color para el avatar */
+}
+
+.publications-all a {
+  color: #1e90ff; /* Cambia el color de los enlaces según tus preferencias */
+  text-decoration: none;
+}
+
+.publications-all a:hover {
+  text-decoration: underline;
+}
