@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -40,7 +41,8 @@ html, body {
   height: 100%;
 }
 
-.vertical, .horizontal {
+.vertical,
+.horizontal {
   display: flex;
 }
 
@@ -55,7 +57,6 @@ html, body {
   font-size: 1.5rem;
   padding-inline: 1rem;
   padding-block: 1.5rem;
-  /* border: 1px solid black; */
   border-radius: 10px;
 }
 
@@ -101,9 +102,8 @@ html, body {
   }
 }
 
-/* content.css */
 .content {
-  background-color: #f3f4f6; /* Cambia el color de fondo según tus preferencias */
+  background-color: #f3f4f6;
   padding: 20px;
 }
 
@@ -122,7 +122,7 @@ html, body {
 }
 
 .content a {
-  color: #1e90ff; /* Cambia el color de los enlaces según tus preferencias */
+  color: #1e90ff;
   text-decoration: none;
 }
 
@@ -131,37 +131,69 @@ html, body {
 }
 
 .content .social-links a {
-  margin-right: 10px; /* Espaciado entre los enlaces de las redes sociales */
+  margin-right: 10px;
 }
 
 .publications-all {
-  background-color: #f3f4f6; /* Cambia el color de fondo según tus preferencias */
+  background-color: #f3f4f6;
   padding: 20px;
-  margin-bottom: 20px; /* Añade margen inferior para separar las publicaciones */
+  margin-bottom: 20px;
 }
 
 .publications-all div {
-  margin-bottom: 15px; /* Espaciado entre cada sección */
+  margin-bottom: 15px;
 }
 
 .publications-all div:nth-child(1) {
-  color: #333; /* Color para el título */
+  color: #333;
 }
 
 .publications-all div:nth-child(2) {
-  color: #666; /* Color para el texto */
+  color: #666;
   line-height: 1.6;
 }
 
 .publications-all div:nth-child(3) {
-  color: #555; /* Color para el avatar */
+  color: #555;
 }
 
 .publications-all a {
-  color: #1e90ff; /* Cambia el color de los enlaces según tus preferencias */
+  color: #1e90ff;
   text-decoration: none;
 }
 
 .publications-all a:hover {
   text-decoration: underline;
 }
+
+.avatar-image {
+  width: 220px;
+  height: 220px;
+}
+
+.button {
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.button:hover {
+  background-color: #007bff;
+}
+
+.button-outline {
+  background-color: transparent;
+  color: #1e90ff;
+  border: 1px solid #1e90ff;
+}
+
+.button-outline:hover {
+  background-color: #f0f0f0;
+}
+
