@@ -16,8 +16,6 @@ function Sidebar() {
           </div>
           <Link to="/" className="link-sidebar">Home</Link>
           <Link to="/my-projects" className="link-sidebar">Mis proyectos.</Link>
-          <a href="" className="link-sidebar">Autem, illum!</a>
-          <a href="" className="link-sidebar">Perferendis, repellat.</a>
         </div>
         <div className="horizontal gap-5">
           <IconBrandGithub className='cursor-pointer' />

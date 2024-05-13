@@ -238,3 +238,32 @@ body {
 .main-content {
   background-color: white;
 }
+
+
+.post-title {
+  font-size: 1.5rem; /* Tamaño de fuente más grande para el título */
+  font-weight: bold; /* Negrita para enfatizar el título */
+  color: #333; /* Color de texto oscuro para mayor contraste */
+  margin-bottom: 10px; /* Espacio inferior para separarlo del contenido siguiente */
+}
+
+.post-text {
+  color: #666; /* Color de texto más oscuro para una buena legibilidad */
+  line-height: 1.6; /* Altura de línea espaciada para facilitar la lectura */
+  margin-bottom: 15px; /* Espacio inferior para separarlo del contenido siguiente */
+}
+
+.avatar-container {
+  margin-bottom: 15px; /* Espacio inferior para separarlo del contenido siguiente */
+  overflow: hidden; /* Ocultar parte de la imagen que exceda el contenedor */
+}
+
+.avatar-image {
+  width: 100%; /* Ancho de la imagen al 100% del contenedor */
+  height: auto; /* Altura automática para mantener la proporción */
+  transition: transform 0.3s ease; /* Transición suave del efecto de zoom */
+}
+
+.avatar-image:hover {
+  transform: scale(1.1); /* Efecto de zoom al 110% del tamaño original al pasar el cursor sobre la imagen */
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App, { Content } from './App.jsx'
+import { Post } from './components/Post.jsx'
 import {ProjectsList} from "./pages/ProjectsList.jsx"
 import './index.css'
 import {
@@ -18,7 +19,11 @@ const router = createBrowserRouter([
     },
     {
       path: "/my-projects",
-      element: <ProjectsList />
+      element: <ProjectsList />,
+    },
+    {
+      path: "/my-projects/:id",
+      element: <Post />
     }
   ]
   },

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { usePost } from "../hooks/usePosts";
 import '../App.css';
 import { ComentsContainer } from "../components/CommentForm";
+import { Link } from "react-router-dom";
 
-const URL = "http://localhost:8080/gestorOpiniones/v1/publications";
 
 export const ProjectsList = () => {
     const { posts, getPost, isFetching } = usePost();
@@ -38,23 +38,27 @@ function CardPost({ titulo, texto, avatarUrl, gitHub, id }) {
     const [showMore, setShowMore] = useState(false);
 
     const toggleShowMore = () => {
-        setShowMore(!showMore);
+        // setShowMore(!showMore);
     };
 
     const toggleShowLess = () => {
-        setShowMore(false);
+        // setShowMore(false);
     };
 
     console.log({ id }, "parent")
 
     return (
         <div className="publications-all">
-            <div>{titulo}</div>
-            {!showMore && <button id="ver-mas" className="button" onClick={toggleShowMore}>Ver más</button>}
+            <div className="post-title">{titulo}</div>
+            {!showMore && <Link to={`/my-projects/${id}`} id="ver-mas" className="button" onClick={toggleShowMore}>Ver más</Link>}
             {showMore && (
                 <>
-                    <div>{texto}</div>
-                    <div><img src={avatarUrl} alt="Avatar" className="avatar-image" /></div>
+                    <div className="post-text">{texto}</div>
+                    <div className="avatar-container">
+                        <img src={avatarUrl} alt="Avatar" className="avatar-image" />
+                    </div>
+
+                    <br />
                     <div><a href={gitHub} target="_blank" rel="noopener noreferrer">Ver en GitHub</a></div>
                     <ComentsContainer postId={id} />
                     <button id="ver-menos" className="button button-outline" onClick={toggleShowLess}>Ver menos</button>
