@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom"
 import './App.css'
 import { IconBrandGithub, IconBrandInstagram } from '@tabler/icons-react'
 import { Link } from "react-router-dom"
-import {Yo} from '../src/components/Yo.jsx'
+import { Yo } from '../src/components/Yo.jsx'
 
 
 function Sidebar() {
@@ -12,15 +12,12 @@ function Sidebar() {
         <div className="vertical">
           <div className="center">
 
-          <Yo className='rounded-full'/>
+            <Yo className='rounded-full' />
           </div>
           <Link to="/" className="link-sidebar">Home</Link>
           <Link to="/my-projects" className="link-sidebar">Mis proyectos.</Link>
           <a href="" className="link-sidebar">Autem, illum!</a>
           <a href="" className="link-sidebar">Perferendis, repellat.</a>
-          <a href="" className="link-sidebar">Sint, odit!</a>
-          <a href="" className="link-sidebar">Debitis, obcaecati!</a>
-          <a href="" className="link-sidebar">Sint, voluptate.</a>
         </div>
         <div className="horizontal gap-5">
           <IconBrandGithub className='cursor-pointer' />
@@ -33,7 +30,7 @@ function Sidebar() {
 
 export function Content() {
   return (
-    <div className='rounded content border grow'>
+    <div className='main-content rounded content border grow'>
       <div className="p-5">
         <h2 className="text-2xl font-bold mb-3">¡Bienvenido a mi blog!</h2>
         <p className="mb-5">
@@ -53,7 +50,7 @@ export function Content() {
           ¡No dudes en seguirme en mis redes sociales para estar al tanto de las últimas actualizaciones y conversar sobre tecnología!
         </p>
         <div className="mt-5 flex gap-3">
-          
+
           <a href="https://www.instagram.com/jose_jc.java?igsh=YXo3dDN0b3Rya2Jq" className="text-blue-500 hover:underline">Instagram</a>
           <br />
           <a href="https://www.linkedin.com/in/josebraulioe/" className="text-blue-500 hover:underline">LinkedIn</a>
@@ -62,15 +59,9 @@ export function Content() {
           <br />
         </div>
       </div>
-      
-    </div>
-    
-  )
-}
 
-function Coments() {
-  return (
-    <div className='rounded coment border grow'>hola, deja tu comentario aca</div>
+    </div>
+
   )
 }
 
