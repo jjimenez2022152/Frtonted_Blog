@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { usePost } from "../hooks/usePosts";
 import '../App.css';
-import { ComentsContainer } from "../components/CommentForm";
+//import { ComentsContainer } from "../components/CommentForm";
 import { Link } from "react-router-dom";
 
 
@@ -50,20 +50,7 @@ function CardPost({ titulo, texto, avatarUrl, gitHub, id }) {
     return (
         <div className="publications-all">
             <div className="post-title">{titulo}</div>
-            {!showMore && <Link to={`/my-projects/${id}`} id="ver-mas" className="button" onClick={toggleShowMore}>Ver más</Link>}
-            {showMore && (
-                <>
-                    <div className="post-text">{texto}</div>
-                    <div className="avatar-container">
-                        <img src={avatarUrl} alt="Avatar" className="avatar-image" />
-                    </div>
-
-                    <br />
-                    <div><a href={gitHub} target="_blank" rel="noopener noreferrer">Ver en GitHub</a></div>
-                    <ComentsContainer postId={id} />
-                    <button id="ver-menos" className="button button-outline" onClick={toggleShowLess}>Ver menos</button>
-                </>
-            )}
+            {!showMore && <Link to={`/my-projects/${id}`} id="ver-mas" className="button1" onClick={toggleShowMore}>Ver más</Link>}
         </div>
     );
 }

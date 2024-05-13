@@ -267,3 +267,21 @@ body {
 .avatar-image:hover {
   transform: scale(1.1); /* Efecto de zoom al 110% del tamaño original al pasar el cursor sobre la imagen */
 }
+
+.publications-all .button1 {
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  text-decoration: none; /* Quita la decoración de subrayado predeterminada */
+}
+
+.button1:hover {
+  background-color: #007bff;
+  color: maroon;
+}
+
