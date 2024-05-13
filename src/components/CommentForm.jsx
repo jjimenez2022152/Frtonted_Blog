@@ -14,17 +14,15 @@ export function ComentsContainer({ postId }) {
 
 
     return (
-        <div>
-            {comments.length === 0 && (
-                <Form getComments={() => getComments(postId)} publicacion={postId} onSubmit={() => {
-                    getComments(postId)
-                }} />
-            )}
+        <div className="contenedor-padre">
             {comments.map((comment) => {
                 return (
                     <CommentContainer key={comment._id} comentario={comment.comentario} username={comment.username} id={comment._id} publicacion={comment.publicacion} />
                 )
             })}
+            <Form getComments={() => getComments(postId)} publicacion={postId} onSubmit={() => {
+                getComments(postId)
+            }} />
         </div>
     )
 }
@@ -110,14 +108,15 @@ const Form = ({ getComments, publicacion, id, onSubmit }) => {
         <div className='comment-form-container'>
             <div className="nickname-container ">
                 <span>Nickname</span>
-                <input onChange={(e) => setForm((form) => ({ ...form, username: e.target.value }))} type="text" />
+                <input value={form.username} onChange={(e) => setForm((form) => ({ ...form, username: e.target.value }))} type="text" />
             </div>
-            <textarea onChange={(e) => setForm((form) => ({ ...form, comentario: e.target.value }))} placeholder="Comentario..." id="" cols="30" rows="10"></textarea>
+            <textarea value={form.comentario} onChange={(e) => setForm((form) => ({ ...form, comentario: e.target.value }))} placeholder="Comentario..." id="" cols="30" rows="10"></textarea>
             <div className="button-container">
                 <div onClick={() => {
                     postComment(form, publicacion, id).then(() => {
-                        onSubmit();
-                    })
+                        setForm(() => ({ username: '', comentario: '' }))
+                        onSubmit(); 
+                })
                 }} className="button-submit">
                     Enviar
                 </div>

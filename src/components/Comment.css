@@ -73,3 +73,9 @@
     cursor: pointer;
     font-size: 0.75rem;
 }
+
+.contenedor-padre {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
