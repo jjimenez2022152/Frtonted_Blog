@@ -12,7 +12,6 @@ export function ComentsContainer({ postId }) {
         return <div>....cargando</div>
     }
 
-
     return (
         <div className="contenedor-padre">
             {comments.map((comment) => {
@@ -20,16 +19,12 @@ export function ComentsContainer({ postId }) {
                     <CommentContainer key={comment._id} comentario={comment.comentario} username={comment.username} id={comment._id} publicacion={comment.publicacion} />
                 )
             })}
-            <Form getComments={() => getComments(postId)} publicacion={postId} onSubmit={() => {
-                getComments(postId)
-            }} />
+            <FormContainer getComments={() => getComments(postId)} publicacion={postId} />
         </div>
     )
 }
 
 export const CommentContainer = ({ comentario, id, publicacion, username }) => {
-    const [isThreadOpen, setIsThreadOpen] = useState(false)
-    const [isReponse, setIsResponse] = useState(false)
     const { childComments, isFetching, getComments } = useChildComments(publicacion, id)
 
     if (isFetching) {
@@ -48,76 +43,50 @@ export const CommentContainer = ({ comentario, id, publicacion, username }) => {
                     {comentario}
                 </span>
             </div>
-            <div className="align-end">
-                <button className="button-submit" onClick={() => setIsResponse(!isReponse)} >Responder</button>
-            </div>
-            {isReponse && <Form getComments={() => getComments(publicacion, id)} publicacion={publicacion} id={id} onSubmit={() => {
-                setIsResponse(false);
-                getComments(publicacion, id)
-            }} />}
-            {childComments.length > 0 && (
-                <div className="responses-container">
-                    <div>
-                        {isThreadOpen && childComments.map((comment) => {
-                            return (
-                                <div style={{
-                                    display: 'flex',
-                                }}
-                                    key={comment._id}
-                                >
-                                    <div
-                                        style={{
-                                            borderLeft: '3px solid gray',
-                                            cursor: 'pointer',
-                                        }}
-                                        onClick={() => {
-                                            setIsThreadOpen(!isThreadOpen)
-                                        }}
-                                    />
-                                    <div style={{
-                                        marginLeft: '20px',
-                                    }}>
-                                        <CommentContainer comentario={comment.comentario} username={comment.username} id={comment._id} publicacion={comment.publicacion} />
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                    {!isThreadOpen && (
-                        <div className="">
-                            <button onClick={() => setIsThreadOpen(!isThreadOpen)} className="see-more">Ver respuestas</button>
-                        </div>
-                    )}
-                </div>
-            )}
         </div>
     )
 }
 
-const Form = ({ getComments, publicacion, id, onSubmit }) => {
+const FormContainer = ({ getComments, publicacion }) => {
     const { postComment, error, comment, setComment } = useCreateComment()
-    const [form, setForm] = useState({ username: '', comentario: '' })
+    const [showForm, setShowForm] = useState(false);
 
+    const toggleForm = () => {
+        setShowForm(!showForm);
+    };
 
-    if (comment && !error) {
-        getComments();
-        setComment(null);
-    }
+    const handlePostComment = (form) => {
+        postComment(form, publicacion).then(() => {
+            getComments();
+            setShowForm(false); 
+        });
+    };
+
+    return (
+        <div>
+            <button className="button-comment" onClick={toggleForm}>Comentar</button>
+            {showForm && <Form onSubmit={handlePostComment} />}
+        </div>
+    );
+}
+
+const Form = ({ onSubmit }) => {
+    const [form, setForm] = useState({ username: '', comentario: '' });
+
+    const handleSubmit = () => {
+        onSubmit(form);
+        setForm({ username: '', comentario: '' });
+    };
 
     return (
         <div className='comment-form-container'>
             <div className="nickname-container ">
                 <span>Nickname</span>
-                <input value={form.username} onChange={(e) => setForm((form) => ({ ...form, username: e.target.value }))} type="text" />
+                <input value={form.username} onChange={(e) => setForm({ ...form, username: e.target.value })} type="text" />
             </div>
-            <textarea value={form.comentario} onChange={(e) => setForm((form) => ({ ...form, comentario: e.target.value }))} placeholder="Comentario..." id="" cols="30" rows="10"></textarea>
+            <textarea value={form.comentario} onChange={(e) => setForm({ ...form, comentario: e.target.value })} placeholder="Comentario..." id="" cols="30" rows="10"></textarea>
             <div className="button-container">
-                <div onClick={() => {
-                    postComment(form, publicacion, id).then(() => {
-                        setForm(() => ({ username: '', comentario: '' }))
-                        onSubmit(); 
-                })
-                }} className="button-submit">
+                <div onClick={handleSubmit} className="button-submit">
                     Enviar
                 </div>
             </div>

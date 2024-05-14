@@ -231,7 +231,7 @@ body {
   height: 100%;
   /* overflow: hidden; */
   overflow-y: scroll;
-  scrollbar-width: none;  /* Firefox  and Chrome */
+  scrollbar-width: none;  
   /* background-color: white; */
 }
 
@@ -241,31 +241,31 @@ body {
 
 
 .post-title {
-  font-size: 1.5rem; /* Tamaño de fuente más grande para el título */
-  font-weight: bold; /* Negrita para enfatizar el título */
-  color: #333; /* Color de texto oscuro para mayor contraste */
-  margin-bottom: 10px; /* Espacio inferior para separarlo del contenido siguiente */
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  color: #333; 
+  margin-bottom: 10px; 
 }
 
 .post-text {
-  color: #666; /* Color de texto más oscuro para una buena legibilidad */
-  line-height: 1.6; /* Altura de línea espaciada para facilitar la lectura */
-  margin-bottom: 15px; /* Espacio inferior para separarlo del contenido siguiente */
+  color: #666; 
+  line-height: 1.6; 
+  margin-bottom: 15px; 
 }
 
 .avatar-container {
-  margin-bottom: 15px; /* Espacio inferior para separarlo del contenido siguiente */
-  overflow: hidden; /* Ocultar parte de la imagen que exceda el contenedor */
+  margin-bottom: 15px; 
+  overflow: hidden; 
 }
 
 .avatar-image {
-  width: 100%; /* Ancho de la imagen al 100% del contenedor */
-  height: auto; /* Altura automática para mantener la proporción */
-  transition: transform 0.3s ease; /* Transición suave del efecto de zoom */
+  width: 100%; 
+  height: auto; 
+  transition: transform 0.3s ease; 
 }
 
 .avatar-image:hover {
-  transform: scale(1.1); /* Efecto de zoom al 110% del tamaño original al pasar el cursor sobre la imagen */
+  transform: scale(1.1); 
 }
 
 .publications-all .button1 {
@@ -277,7 +277,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 16px;
-  text-decoration: none; /* Quita la decoración de subrayado predeterminada */
+  text-decoration: none; 
 }
 
 .button1:hover {
