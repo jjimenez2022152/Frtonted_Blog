@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -21,17 +20,21 @@ body {
   justify-content: space-between;
   margin-bottom: 8px;
   gap: 2px;
-  border-radius: 12px; /* Añadido el valor de píxeles para el radio del borde */
+  border-radius: 12px;
+  /* Añadido el valor de píxeles para el radio del borde */
 }
 
 .image {
-  flex-basis: calc(50% - 10px); 
+  flex-basis: calc(50% - 10px);
 }
 
 .image img {
-  width: 100%; /* Para que todas las imágenes tengan el mismo ancho */
-  height: auto; /* Para mantener la proporción de aspecto de las imágenes */
-  border-radius: 12px; /* Añadido el valor de píxeles para el radio del borde */
+  width: 100%;
+  /* Para que todas las imágenes tengan el mismo ancho */
+  height: auto;
+  /* Para mantener la proporción de aspecto de las imágenes */
+  border-radius: 12px;
+  /* Añadido el valor de píxeles para el radio del borde */
 }
 
 
@@ -44,7 +47,10 @@ body {
 .container-screen {
   display: flex;
   /* width: 1200px; */
-  background-color: #e3e9f4;
+  background-color: #afc8d9;
+  background-image: linear-gradient(0deg, #afc8d9 0%, #97D9E1 100%);
+
+
   width: 100%;
   height: 100dvh;
   gap: 1rem;
@@ -73,7 +79,7 @@ body {
 
 .sidebar {
   width: 300px;
-  background-color: white;
+  background-color: #afc8d9;
   height: 100%;
 }
 
@@ -254,7 +260,7 @@ body {
   height: 100%;
   /* overflow: hidden; */
   overflow-y: scroll;
-  scrollbar-width: none;  
+  scrollbar-width: none;
   /* background-color: white; */
 }
 
@@ -264,31 +270,31 @@ body {
 
 
 .post-title {
-  font-size: 1.5rem; 
-  font-weight: bold; 
-  color: #333; 
-  margin-bottom: 10px; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .post-text {
-  color: #666; 
-  line-height: 1.6; 
-  margin-bottom: 15px; 
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .avatar-container {
-  margin-bottom: 15px; 
-  overflow: hidden; 
+  margin-bottom: 15px;
+  overflow: hidden;
 }
 
 .avatar-image {
-  width: 100%; 
-  height: auto; 
-  transition: transform 0.3s ease; 
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .avatar-image:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 .publications-all .button1 {
@@ -300,7 +306,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 16px;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .button1:hover {
