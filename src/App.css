@@ -16,6 +16,24 @@ body {
   /* overflow: hidden; */
 }
 
+.images-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 2px;
+  border-radius: 12px; /* Añadido el valor de píxeles para el radio del borde */
+}
+
+.image {
+  flex-basis: calc(50% - 10px); 
+}
+
+.image img {
+  width: 100%; /* Para que todas las imágenes tengan el mismo ancho */
+  height: auto; /* Para mantener la proporción de aspecto de las imágenes */
+  border-radius: 12px; /* Añadido el valor de píxeles para el radio del borde */
+}
+
 
 #root {
   display: flex;
@@ -35,6 +53,11 @@ body {
   align-items: start;
   overflow: hidden;
 }
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
 
 .border {
   border: 1px solid black;
@@ -284,4 +307,3 @@ body {
   background-color: #007bff;
   color: maroon;
 }
-

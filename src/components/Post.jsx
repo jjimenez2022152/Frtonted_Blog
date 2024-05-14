@@ -42,6 +42,7 @@ export const Post = () => {
                 </div>
 
                 <br />
+                <p className="post-text">Si desear visualizar y probar este proyecto, puedes hacerlo con el siguiente link para descargarlo:</p>
                 <div><a href={post.gitHub} target="_blank" rel="noopener noreferrer">Ver en GitHub</a></div>
                 <br />
                 <ComentsContainer postId={id} />
